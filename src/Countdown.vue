@@ -2,19 +2,19 @@
     <ul class="vuejs-countdown">
         <li v-if="days > 0">
             <p class="digit">{{ days | twoDigits }}</p>
-            <p class="text">{{ days > 1 ? 'days' : 'day' }}</p>
+            <p class="text">d</p>
         </li>
         <li>
             <p class="digit">{{ hours | twoDigits }}</p>
-            <p class="text">{{ hours > 1 ? 'hours' : 'hour' }}</p>
+            <p class="text">h</p>
         </li>
         <li>
             <p class="digit">{{ minutes | twoDigits }}</p>
-            <p class="text">min</p>
+            <p class="text">m</p>
         </li>
         <li>
             <p class="digit">{{ seconds | twoDigits }}</p>
-            <p class="text">Sec</p>
+            <p class="text">s</p>
         </li>
     </ul>
 </template>
@@ -104,20 +104,13 @@ export default {
   margin: 0;
 }
 .vuejs-countdown li {
-  display: inline-block;
-  margin: 0 8px;
-  text-align: center;
+  display: flex;
+  margin-right: 5px;
   position: relative;
+  align-items: baseline;
 }
 .vuejs-countdown li p {
-    margin: 0;
-}
-.vuejs-countdown li:after {
-  content: ":";
-  position: absolute;
-  top: 0;
-  right: -13px;
-  font-size: 32px;
+  margin: 0;
 }
 .vuejs-countdown li:first-of-type {
   margin-left: 0;
@@ -129,14 +122,11 @@ export default {
   content: "";
 }
 .vuejs-countdown .digit {
-  font-size: 32px;
-  font-weight: 600;
+  font-size: 14px;
   line-height: 1.4;
   margin-bottom: 0;
 }
 .vuejs-countdown .text {
-  text-transform: uppercase;
-  margin-bottom: 0;
-  font-size: 10px;
+  font-size: 12px;
 }
 </style>
